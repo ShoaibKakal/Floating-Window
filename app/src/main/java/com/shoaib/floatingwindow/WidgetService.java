@@ -3,11 +3,9 @@ package com.shoaib.floatingwindow;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
-import android.provider.Settings;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -23,13 +21,10 @@ import androidx.annotation.Nullable;
 import com.shoaib.floatingwindow.network.ApiClient;
 import com.shoaib.floatingwindow.network.ApiService;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -85,12 +80,12 @@ public class WidgetService extends Service {
         //initial Position
         layoutParams.gravity = Gravity.TOP | Gravity.CENTER;
         layoutParams.x = 0;
-        layoutParams.y = 100;
+        layoutParams.y = 210;
 
         //layout params for clone button
 
 
-        WindowManager.LayoutParams imageParams = new WindowManager.LayoutParams(140, 140, LAYOUT_FLAG, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
+        WindowManager.LayoutParams imageParams = new WindowManager.LayoutParams(100, 100, LAYOUT_FLAG, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
         imageParams.gravity = Gravity.BOTTOM | Gravity.CENTER;
         imageParams.y = 100;
 
@@ -98,6 +93,7 @@ public class WidgetService extends Service {
         imageClose = new ImageView(this);
         imageClose.setImageResource(R.drawable.ic_close);
         imageClose.setBackgroundColor(R.color.black);
+
         imageClose.setVisibility(View.INVISIBLE);
         windowManager.addView(imageClose, imageParams);
         windowManager.addView(floatingView, layoutParams);
@@ -197,7 +193,7 @@ public class WidgetService extends Service {
                 arrayList.clear();
                 handler.removeCallbacksAndMessages(null);
                 //  showTextOnBubble(responseString, xSeconds, ySeconds);
-                Toast.makeText(WidgetService.this, "Again called", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(WidgetService.this, "Again called", Toast.LENGTH_SHORT).show();
                 networkCall();
                 handlerYSeconds.removeCallbacksAndMessages(null);
             }

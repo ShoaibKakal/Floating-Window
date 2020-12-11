@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/_10sdp"
+    android:animateLayoutChanges="true"
+    android:padding="@dimen/_5sdp"
     android:layout_height="wrap_content">
 
     <TextView
@@ -19,14 +21,27 @@
         />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textUrlString"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="https://prdec.com/status_app/status_app_return_string.php"
+        android:textSize="@dimen/_10ssp"
+
+        />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textXSeconds"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textTitle"
-        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/textUrlString"
+        android:layout_marginTop="@dimen/_5sdp"
         android:text="X seconds = 3"
-        android:textSize="@dimen/_14ssp"
+        android:textSize="@dimen/_12ssp"
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
         android:textColor="@color/black"
@@ -40,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/textXSeconds"
         android:layout_marginTop="@dimen/_4sdp"
         android:text="Y Seconds = 12"
-        android:textSize="@dimen/_14ssp"
+        android:textSize="@dimen/_12ssp"
         android:fontFamily="@font/ubuntu"
         android:includeFontPadding="false"
         android:textColor="@color/black"
