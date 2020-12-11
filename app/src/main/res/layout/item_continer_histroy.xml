@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
+        android:textSize="@dimen/_20ssp"
+        android:text="Setting A"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textXSeconds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="X seconds = 3"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/ubuntu"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textYSeconds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textXSeconds"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:text="Y Seconds = 12"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/ubuntu"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        />
+
+
+    <Button
+        android:id="@+id/buttonUse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textYSeconds"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:text="Use"
+        android:textAllCaps="false"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:id="@+id/imageDeleteHistory"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:tint="@android:color/holo_red_dark" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/purple_500"
+        app:layout_constraintTop_toBottomOf="@id/buttonUse"
+        app:layout_constraintEnd_toEndOf="@id/buttonUse"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
